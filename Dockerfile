@@ -12,8 +12,8 @@ RUN apt-get update -yqq && apt-get install -yqq zip
 COPY etc/php.ini /usr/local/etc/php/php.ini
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php && chmod a+x composer.phar && mv composer.phar /usr/local/bin/composer
-
+# Composer prestissimo for running composer install faster
 RUN composer global require hirak/prestissimo
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
+COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
