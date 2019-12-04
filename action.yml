@@ -1,0 +1,13 @@
+# action.yml
+name: 'Composer'
+description: 'Run a composer command'
+inputs:
+  composer-command:
+    description: 'Composer command'
+    required: true
+    default: 'install'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.composer-command }}
