@@ -10,6 +10,8 @@ This action runs composer command on a PHP 7.2 env with several extensions alrea
 
 ## Example usage
 
+```
 uses: cyclad-digital-factory/composer-github-action@master
 with:
   composer-command: 'install'
+```
